@@ -80,6 +80,8 @@ if [ -z "$DB_SOCK" ]; then
         echo "Info: Waiting for database connection..."
         sleep 5
     done
+    sleep 2
+    echo "Info: Database is available"
 fi
 
 # Atualiza DB
