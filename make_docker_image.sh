@@ -43,4 +43,4 @@ echo "User ID: $USER_ID, Group ID: $GROUP_ID"
 docker build \
     --build-arg USER_ID=$USER_ID \
     --build-arg GROUP_ID=$GROUP_ID \
-    -t fherat/limesurvey:$TAG .
+    -t limesurvey:$TAG .
