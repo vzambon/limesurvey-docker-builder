@@ -22,7 +22,8 @@ class InstallUploadedPluginCommand extends CConsoleCommand
         }
 
         #activate the plugin
-        if (!$pm->isPluginActive($pluginName)) {
+        $plugin = Plugin::model()->findByAttributes(['name' => $pluginName]);
+        if (!$plugin->active) {
             $plugin->active = 1;
             $plugin->save();
             echo "Plugin {$pluginName} activated.\n";
