@@ -3,7 +3,7 @@
  * InstallUploadedPlugin Command
  *
  * This command installs a plugin from the upload directory.
- * Usage: php console.php installUploadedPlugin <pluginName>
+ * Usage: php console.php installUploadedPlugin --pluginName=<pluginName>
  */
 class InstallUploadedPluginCommand extends CConsoleCommand
 {
