@@ -1,0 +1,64 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| DATABASE CONNECTIVITY SETTINGS
+| -------------------------------------------------------------------
+| This file will contain the settings needed to access your database.
+|
+| For complete instructions please consult the 'Database Connection'
+| page of the User Guide.
+|
+| -------------------------------------------------------------------
+| EXPLANATION OF VARIABLES
+| -------------------------------------------------------------------
+|
+|    'connectionString' Hostname, database, port and database type for 
+|     the connection. Driver example: mysql. Currently supported:
+|                 mysql, pgsql, mssql, sqlite, oci
+|    'username' The username used to connect to the database
+|    'password' The password used to connect to the database
+|    'tablePrefix' You can add an optional prefix, which will be added
+|                 to the table name when using the Active Record class
+|
+*/
+return array(
+	'components' => array(
+		'db' => array(
+			'connectionString' => '{{DB_TYPE}}:host={{DB_HOST}};port={{DB_PORT}};user={{DB_USER}};password={{DB_PASSWORD}};dbname={{DB_NAME}};',
+			'emulatePrepare' => true,
+			'username' => '{{DB_USER}}',
+			'password' => '{{DB_PASSWORD}}',
+			'charset' => '{{DB_CHARSET}}',
+			'tablePrefix' => '{{DB_TABLE_PREFIX}}',
+		),
+		
+		 'session' => array (
+			'sessionName'=>'{{SESSION_NAME}}',
+			'class' => 'application.core.web.DbHttpSession',
+			'connectionID' => 'db',
+			'sessionTableName' => '{{sessions}}',
+		 ),
+		
+		'urlManager' => array(
+			'urlFormat' => '{{URL_FORMAT}}',
+			'rules' => array(
+				// You can add your own rules here
+			),
+			'showScriptName' => true,
+		),
+	
+		//'request' => array(
+		//	'baseUrl' => '/limesurvey',
+		//),
+	),
+	// For security issue : it's better to set runtimePath out of web access
+	// 'runtimePath'=>'/var/limesurvey/runtime/'
+	'config'=>array(
+		'debug'=> {{DEBUG}},
+		'debugsql'=>{{DEBUGSQL}},
+
+		//'publicurl' => '{{PUBLIC_URL}}',
+	)
+);
+/* End of file config.php */
+/* Location: ./application/config/config.php */

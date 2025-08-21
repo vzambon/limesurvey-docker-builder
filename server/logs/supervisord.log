@@ -1,0 +1,96 @@
+2025-08-21 20:21:48,589 INFO Set uid to user 1000 succeeded
+2025-08-21 20:21:48,592 INFO supervisord started with pid 1
+2025-08-21 20:21:49,594 INFO spawned: 'php-fpm' with pid 21
+2025-08-21 20:21:49,600 INFO spawned: 'supercornic' with pid 22
+2025-08-21 20:21:50,658 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:21:50,658 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:22:47,719 WARN received SIGQUIT indicating exit request
+2025-08-21 20:22:47,719 INFO waiting for php-fpm, supercornic to die
+2025-08-21 20:22:47,721 INFO stopped: supercornic (exit status 0)
+2025-08-21 20:22:47,730 INFO stopped: php-fpm (exit status 0)
+2025-08-21 20:23:19,014 INFO Set uid to user 1000 succeeded
+2025-08-21 20:23:19,016 INFO supervisord started with pid 1
+2025-08-21 20:23:20,019 INFO spawned: 'php-fpm' with pid 21
+2025-08-21 20:23:20,021 INFO spawned: 'supercornic' with pid 22
+2025-08-21 20:23:21,067 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:23:21,067 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:26:06,243 WARN received SIGQUIT indicating exit request
+2025-08-21 20:26:06,263 INFO waiting for php-fpm, supercornic to die
+2025-08-21 20:26:06,264 INFO stopped: supercornic (exit status 0)
+2025-08-21 20:26:06,273 INFO stopped: php-fpm (exit status 0)
+2025-08-21 20:26:07,547 INFO Set uid to user 1000 succeeded
+2025-08-21 20:26:07,549 INFO supervisord started with pid 1
+2025-08-21 20:26:08,551 INFO spawned: 'php-fpm' with pid 21
+2025-08-21 20:26:08,553 INFO spawned: 'supercornic' with pid 22
+2025-08-21 20:26:09,601 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:26:09,601 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:27:11,862 WARN received SIGQUIT indicating exit request
+2025-08-21 20:27:11,882 INFO waiting for php-fpm, supercornic to die
+2025-08-21 20:27:11,884 INFO stopped: supercornic (exit status 0)
+2025-08-21 20:27:11,893 INFO stopped: php-fpm (exit status 0)
+2025-08-21 20:28:41,717 INFO Set uid to user 1000 succeeded
+2025-08-21 20:28:41,720 INFO supervisord started with pid 1
+2025-08-21 20:28:42,723 INFO spawned: 'php-fpm' with pid 22
+2025-08-21 20:28:42,725 INFO spawned: 'supercornic' with pid 23
+2025-08-21 20:28:43,796 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:28:43,796 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:30:00,426 WARN received SIGQUIT indicating exit request
+2025-08-21 20:30:00,427 INFO waiting for php-fpm, supercornic to die
+2025-08-21 20:30:00,428 INFO stopped: supercornic (exit status 0)
+2025-08-21 20:30:00,440 INFO stopped: php-fpm (exit status 0)
+2025-08-21 20:30:19,000 INFO Set uid to user 1000 succeeded
+2025-08-21 20:30:19,003 INFO supervisord started with pid 1
+2025-08-21 20:30:20,006 INFO spawned: 'php-fpm' with pid 22
+2025-08-21 20:30:20,008 INFO spawned: 'supercornic' with pid 23
+2025-08-21 20:30:21,077 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:30:21,077 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:38:22,345 WARN received SIGQUIT indicating exit request
+2025-08-21 20:38:22,345 INFO waiting for php-fpm, supercornic to die
+2025-08-21 20:38:22,347 INFO stopped: supercornic (exit status 0)
+2025-08-21 20:38:22,365 INFO stopped: php-fpm (exit status 0)
+2025-08-21 20:38:46,198 INFO Set uid to user 1000 succeeded
+2025-08-21 20:38:46,202 INFO supervisord started with pid 1
+2025-08-21 20:38:47,205 INFO spawned: 'php-fpm' with pid 22
+2025-08-21 20:38:47,207 INFO spawned: 'supercornic' with pid 23
+2025-08-21 20:38:48,264 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:38:48,264 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:59:27,590 WARN received SIGQUIT indicating exit request
+2025-08-21 20:59:27,610 INFO waiting for php-fpm, supercornic to die
+2025-08-21 20:59:27,612 INFO stopped: supercornic (exit status 0)
+2025-08-21 20:59:27,621 INFO stopped: php-fpm (exit status 0)
+2025-08-21 20:59:29,051 INFO Set uid to user 1000 succeeded
+2025-08-21 20:59:29,054 INFO supervisord started with pid 1
+2025-08-21 20:59:30,058 INFO spawned: 'php-fpm' with pid 21
+2025-08-21 20:59:30,060 INFO spawned: 'supercornic' with pid 22
+2025-08-21 20:59:31,131 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 20:59:31,131 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 21:14:55,887 WARN received SIGQUIT indicating exit request
+2025-08-21 21:14:55,887 INFO waiting for php-fpm, supercornic to die
+2025-08-21 21:14:55,889 INFO stopped: supercornic (exit status 0)
+2025-08-21 21:14:55,910 INFO stopped: php-fpm (exit status 0)
+2025-08-21 21:15:08,167 INFO Set uid to user 1000 succeeded
+2025-08-21 21:15:08,181 INFO supervisord started with pid 1
+2025-08-21 21:15:09,184 INFO spawned: 'php-fpm' with pid 23
+2025-08-21 21:15:09,186 INFO spawned: 'supercornic' with pid 24
+2025-08-21 21:15:10,272 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 21:15:10,272 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 21:17:02,389 WARN received SIGQUIT indicating exit request
+2025-08-21 21:17:02,389 INFO waiting for php-fpm, supercornic to die
+2025-08-21 21:17:02,391 INFO stopped: supercornic (exit status 0)
+2025-08-21 21:17:02,401 INFO stopped: php-fpm (exit status 0)
+2025-08-21 21:17:17,443 INFO Set uid to user 1000 succeeded
+2025-08-21 21:17:17,454 INFO supervisord started with pid 1
+2025-08-21 21:17:18,457 INFO spawned: 'php-fpm' with pid 23
+2025-08-21 21:17:18,460 INFO spawned: 'supercornic' with pid 24
+2025-08-21 21:17:19,523 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 21:17:19,523 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 21:20:52,114 WARN received SIGQUIT indicating exit request
+2025-08-21 21:20:52,114 INFO waiting for php-fpm, supercornic to die
+2025-08-21 21:20:52,115 INFO stopped: supercornic (exit status 0)
+2025-08-21 21:20:52,126 INFO stopped: php-fpm (exit status 0)
+2025-08-21 21:21:05,172 INFO Set uid to user 1000 succeeded
+2025-08-21 21:21:05,182 INFO supervisord started with pid 1
+2025-08-21 21:21:06,186 INFO spawned: 'php-fpm' with pid 23
+2025-08-21 21:21:06,188 INFO spawned: 'supercornic' with pid 24
+2025-08-21 21:21:07,250 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-21 21:21:07,250 INFO success: supercornic entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

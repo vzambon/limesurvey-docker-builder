@@ -1,0 +1,47 @@
+time="2025-08-21T20:21:49Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:21:49Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T20:22:47Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T20:22:47Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T20:22:47Z" level=info msg=exiting
+time="2025-08-21T20:23:20Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:23:20Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T20:26:06Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T20:26:06Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T20:26:06Z" level=info msg=exiting
+time="2025-08-21T20:26:08Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:26:08Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T20:27:11Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T20:27:11Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T20:27:11Z" level=info msg=exiting
+time="2025-08-21T20:28:42Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:28:42Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T20:30:00Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T20:30:00Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T20:30:00Z" level=info msg=exiting
+time="2025-08-21T20:30:20Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:30:20Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T20:38:22Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T20:38:22Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T20:38:22Z" level=info msg=exiting
+time="2025-08-21T20:38:47Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:38:47Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T20:59:27Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T20:59:27Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T20:59:27Z" level=info msg=exiting
+time="2025-08-21T20:59:30Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T20:59:30Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T21:14:55Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T21:14:55Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T21:14:55Z" level=info msg=exiting
+time="2025-08-21T21:15:09Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T21:15:09Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T21:17:02Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T21:17:02Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T21:17:02Z" level=info msg=exiting
+time="2025-08-21T21:17:18Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T21:17:18Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"
+time="2025-08-21T21:20:52Z" level=info msg="received terminated, shutting down"
+time="2025-08-21T21:20:52Z" level=info msg="waiting for jobs to finish"
+time="2025-08-21T21:20:52Z" level=info msg=exiting
+time="2025-08-21T21:21:06Z" level=warning msg="process reaping disabled, not pid 1"
+time="2025-08-21T21:21:06Z" level=info msg="read crontab: /etc/cron.d/limesurvey-cron"

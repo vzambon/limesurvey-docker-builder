@@ -1,0 +1,179 @@
+[21-Aug-2025 20:21:49] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:21:49] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:21:49] NOTICE: fpm is running, pid 21
+[21-Aug-2025 20:21:49] NOTICE: ready to handle connections
+[21-Aug-2025 20:22:47] NOTICE: Terminating ...
+[21-Aug-2025 20:22:47] NOTICE: exiting, bye-bye!
+[21-Aug-2025 20:23:20] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:23:20] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:23:20] NOTICE: fpm is running, pid 21
+[21-Aug-2025 20:23:20] NOTICE: ready to handle connections
+[21-Aug-2025 20:26:06] NOTICE: Terminating ...
+[21-Aug-2025 20:26:06] NOTICE: exiting, bye-bye!
+[21-Aug-2025 20:26:08] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:26:08] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:26:08] NOTICE: fpm is running, pid 21
+[21-Aug-2025 20:26:08] NOTICE: ready to handle connections
+192.168.224.4 -  21/Aug/2025:20:26:10 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:12 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:14 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:14 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:15 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:15 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:17 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:17 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:17 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:17 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:17 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:18 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:26:18 +0000 "GET /index.php" 200
+[21-Aug-2025 20:27:11] NOTICE: Terminating ...
+[21-Aug-2025 20:27:11] NOTICE: exiting, bye-bye!
+[21-Aug-2025 20:28:42] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:28:42] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:28:42] NOTICE: fpm is running, pid 22
+[21-Aug-2025 20:28:42] NOTICE: ready to handle connections
+192.168.224.4 -  21/Aug/2025:20:28:49 +0000 "GET /index.php" 500
+192.168.224.4 -  21/Aug/2025:20:28:50 +0000 "GET /index.php" 500
+[21-Aug-2025 20:30:00] NOTICE: Terminating ...
+[21-Aug-2025 20:30:00] NOTICE: exiting, bye-bye!
+[21-Aug-2025 20:30:20] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:30:20] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:30:20] NOTICE: fpm is running, pid 22
+[21-Aug-2025 20:30:20] NOTICE: ready to handle connections
+192.168.224.4 -  21/Aug/2025:20:30:33 +0000 "GET /index.php" 302
+192.168.224.4 -  21/Aug/2025:20:30:34 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:30:40 +0000 "POST /index.php" 302
+192.168.224.4 -  21/Aug/2025:20:30:40 +0000 "GET /index.php" 302
+192.168.224.4 -  21/Aug/2025:20:30:40 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:30:41 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:30:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:30:48 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:36:32 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:36:35 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:20:36:44 +0000 "GET /index.php" 200
+[21-Aug-2025 20:38:22] NOTICE: Terminating ...
+[21-Aug-2025 20:38:22] NOTICE: exiting, bye-bye!
+[21-Aug-2025 20:38:47] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:38:47] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:38:47] NOTICE: fpm is running, pid 22
+[21-Aug-2025 20:38:47] NOTICE: ready to handle connections
+[21-Aug-2025 20:59:27] NOTICE: Terminating ...
+[21-Aug-2025 20:59:27] NOTICE: exiting, bye-bye!
+[21-Aug-2025 20:59:30] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:59:30] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 20:59:30] NOTICE: fpm is running, pid 21
+[21-Aug-2025 20:59:30] NOTICE: ready to handle connections
+192.168.224.4 -  21/Aug/2025:21:00:37 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:00:42 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:01:52 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:00 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:02 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:15 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:15 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:16 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:19 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:19 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:19 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:22 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:22 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:22 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:22 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:23 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:36 +0000 "POST /index.php" 302
+192.168.224.4 -  21/Aug/2025:21:02:36 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:36 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:36 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:36 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:36 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:40 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:40 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:40 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:40 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:40 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:41 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:41 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:41 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:41 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:41 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:44 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:47 +0000 "POST /index.php" 302
+192.168.224.4 -  21/Aug/2025:21:02:47 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:47 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:47 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:47 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:47 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:49 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:49 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:49 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:49 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:50 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:50 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:50 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:50 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:50 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:51 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:51 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:51 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:51 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:51 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:52 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:52 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:52 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:52 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:52 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:55 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:55 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:55 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:55 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:57 +0000 "GET /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:02:59 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:03:04 +0000 "POST /index.php" 200
+192.168.224.4 -  21/Aug/2025:21:03:08 +0000 "POST /index.php" 200
+[21-Aug-2025 21:14:55] NOTICE: Terminating ...
+[21-Aug-2025 21:14:55] NOTICE: exiting, bye-bye!
+[21-Aug-2025 21:15:09] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 21:15:09] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 21:15:09] NOTICE: fpm is running, pid 23
+[21-Aug-2025 21:15:09] NOTICE: ready to handle connections
+192.168.240.4 -  21/Aug/2025:21:15:37 +0000 "POST /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:39 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:45 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:46 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:46 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:46 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:47 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:15:47 +0000 "GET /index.php" 500
+[21-Aug-2025 21:17:02] NOTICE: Terminating ...
+[21-Aug-2025 21:17:02] NOTICE: exiting, bye-bye!
+[21-Aug-2025 21:17:18] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 21:17:18] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 21:17:18] NOTICE: fpm is running, pid 23
+[21-Aug-2025 21:17:18] NOTICE: ready to handle connections
+192.168.240.4 -  21/Aug/2025:21:19:39 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:19:40 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:19:40 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:19:40 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:19:41 +0000 "GET /index.php" 500
+[21-Aug-2025 21:20:52] NOTICE: Terminating ...
+[21-Aug-2025 21:20:52] NOTICE: exiting, bye-bye!
+[21-Aug-2025 21:21:06] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[21-Aug-2025 21:21:06] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[21-Aug-2025 21:21:06] NOTICE: fpm is running, pid 23
+[21-Aug-2025 21:21:06] NOTICE: ready to handle connections
+192.168.240.4 -  21/Aug/2025:21:21:22 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:21:23 +0000 "GET /index.php" 500
+192.168.240.4 -  21/Aug/2025:21:21:23 +0000 "GET /index.php" 500
