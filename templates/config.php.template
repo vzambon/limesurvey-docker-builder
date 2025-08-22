@@ -58,6 +58,10 @@ return array(
 		'debugsql'=>{{DEBUGSQL}},
 
 		//'publicurl' => '{{PUBLIC_URL}}',
+
+		'RPCInterface' => 'json',
+		'rpc_publish_api' => 1,
+		'add_access_control_header' => 1,
 	)
 );
 /* End of file config.php */
