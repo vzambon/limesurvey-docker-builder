@@ -8,6 +8,8 @@ services:
       - lime:/var/www/html
     networks:
       - lime_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - lime_pgsql
     env_file:
