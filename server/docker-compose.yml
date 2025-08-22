@@ -1,6 +1,6 @@
 services:
   limesurvey:
-    image: fherat/limesurvey:6.14.3
+    image: limesurvey:6.14.3
     volumes:
       - ./upload:/var/www/html/upload
       - ./limesurvey-cron:/etc/cron.d/limesurvey-cron
