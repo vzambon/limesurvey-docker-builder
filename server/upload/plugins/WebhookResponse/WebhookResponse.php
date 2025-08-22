@@ -108,7 +108,6 @@ class WebhookResponse extends PluginBase
         $event = $this->getEvent();
         $surveyId   = $event->get('surveyId');
         $responseId = $event->get('responseId');
-        $participantId = $event->get('participantId');
         $language = 'en';
 
         $response = $this->api->getResponse($surveyId, $responseId);
