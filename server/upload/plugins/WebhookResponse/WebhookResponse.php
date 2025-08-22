@@ -4,7 +4,8 @@ class WebhookResponse extends PluginBase
 {
     protected $storage = 'DbStorage';
 
-    protected static $description = 'This plugin sends a POST request to a specified URL after a survey response is submitted';
+    protected static $description = 'This plugin sends a POST request to a specified URL after a survey response is ' .
+        'submitted';
     protected static $name = 'WebhookResponse';
 
     protected $settings = [
@@ -47,8 +48,6 @@ class WebhookResponse extends PluginBase
     {
         $event = $this->getEvent();
         $surveyId = $event->get('survey');
-
-        $settings = $this->settings;
     
         $settingsWithoutGlobal = array_filter($this->settings, function ($s) {
             return empty($s['global_only']);
@@ -100,51 +99,69 @@ class WebhookResponse extends PluginBase
 
     public function afterSurveyComplete()
     {
-        if($this->get('isActive', 'Survey', $this->getEvent()->get('surveyId')) !== true) {
+        $isActive = (bool) $this->get('isActive', 'Survey', $this->getEvent()->get('surveyId'));
+
+        if(!$isActive) {
             return;
         }
 
         $event = $this->getEvent();
+        $surveyId   = $event->get('surveyId');
+        $responseId = $event->get('responseId');
+        $participantId = $event->get('participantId');
+        $language = 'en';
 
-        $surveyId = (int) $event->get('surveyId');
-        $responseId = (int) $event->get('responseId');
-        $survey = Survey::model()->findByPk($surveyId);
+        $response = $this->api->getResponse($surveyId, $responseId);
+        $questions = $this->api->getQuestions($surveyId, $language);
 
-        Yii::app()->loadHelper('admin/exportresults');
-        if (!tableExists($survey->responsesTableName)) {
-            return array('status' => 'No Data, survey table does not exist.');
+        $questionsMap = [];
+        foreach ($questions as $question) {
+            $questionText = $question->questionl10ns[$language]->question;
+
+            switch($question->type){
+                case 'T':
+                case 'S':
+                    $answerValue = $response[$question->title];
+                    break;
+                case 'L':
+                    $answerCode = $response[$question->title];
+                    $answerObj = null;
+                    foreach ($question->answers as $ans) {
+                        if ($ans->code == $answerCode) {
+                            $answerObj = $ans;
+                            break;
+                        }
+                    }
+                    $answerValue = $answerObj
+                        ? ($answerObj->answerl10ns[$language]->answer ?? $answerCode)
+                        : $answerCode;
+                    break;
+                default:
+                    $answerValue = $response[$question->title] ?? null;
+                    break;
+            }
+
+            $questionsMap[$question->qid] = [
+                'text' => $questionText,
+                'code' => $question->title,
+                'answer' => $answerValue
+            ];
         }
-        if (!($maxId = SurveyDynamic::model($surveyId)->getMaxId(null, true))) {
-            return array('status' => 'No Data, could not get max id.');
-        }
-        if (!empty($sLanguageCode) && !in_array($sLanguageCode, $survey->getAllLanguages())) {
-            return array('status' => 'Language code not found for this survey.');
-        }   
 
-        $aFields = array_keys(createFieldMap($survey, 'full', true, false, $survey->language));
+        $token = $this->api->getToken($surveyId, $response['token']);
 
-        $oFormattingOptions = new FormattingOptions();
-        $oFormattingOptions->selectedColumns = $aFields;
-        $oFormattingOptions->headingFormat = 'full';
-        $oFormattingOptions->answerFormat = 'long';
-        $oFormattingOptions->responseMinRecord = $responseId;
-        $oFormattingOptions->responseMaxRecord = $responseId;
-
-        $oExport = new ExportSurveyResultsService();
-        $sTempFile = $oExport->exportResponses($surveyId, $survey->language, 'json', $oFormattingOptions, '');
-
-        $json = base64_decode((new BigFile($sTempFile, true))->getContent());
+        $response['tid'] = $token->tid;
+        $response['participant_id'] = $token->participant_id;
+        $response['surveyId'] = $surveyId;
 
         $webhookUrl = $this->get('webhookUrl', 'Survey', $surveyId);
         $token = $this->get('authToken', 'Survey', $surveyId);
 
         $webhookUrl = $webhookUrl . '?token=' . $token;
 
-        $this->httpPost($webhookUrl, $json);
+        $response = array_merge($response, ['map' => $questionsMap]);
 
-        $this->debug($webhookUrl, $json);
-
-        return;
+        $this->httpPost($webhookUrl, $response);
     }
 
     private function httpPost($url, $body)
@@ -152,35 +169,27 @@ class WebhookResponse extends PluginBase
         $ch = curl_init($url);
 
         curl_setopt_array($ch, [
-            CURLOPT_HEADER => [
+            CURLOPT_HTTPHEADER => [
                 'Content-Type: application/json',
-                'Accept: application/json;charset=UTF8',
+                'Accept: application/json;charset=UTF-8',
             ],
             CURLOPT_FAILONERROR => true,
             CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_SSL_VERIFYHOST => 2,
-            CURLOPT_POSTFIELDS => $body,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => json_encode($body),
             CURLOPT_RETURNTRANSFER => true,
         ]);
 
-        curl_exec($ch);
+        $result = curl_exec($ch);
         $errNo = curl_errno($ch);
         $errMsg = curl_error($ch);
         curl_close($ch);
 
         if ($errNo !== 0) {
-            throw new Exception("CURL Error ($errNo): $errMsg");
+            throw new \Exception("CURL Error ($errNo): $errMsg");
         }
-    }
-    private function debug($webhookUrl, $json)
-    {
-        $html =  '<pre>';
-        $html .= print_r($webhookUrl, true);
-        $html .=  "<br><br> ----------------------------- <br><br>";
-        $html .= print_r($json, true);
-        $html .=  "<br><br> ----------------------------- <br><br>";
-        $html .=  '</pre>';
-        $event = $this->getEvent();
-        $event->getContent($this)->addContent($html);
+
+        return $result;
     }
 }
