@@ -108,9 +108,8 @@ class WebhookResponse extends PluginBase
         $event = $this->getEvent();
         $surveyId   = $event->get('surveyId');
         $responseId = $event->get('responseId');
-        $language = 'en';
-
         $response = $this->api->getResponse($surveyId, $responseId);
+        $language = $response['startlanguage'] ?? 'en';
         $questions = $this->api->getQuestions($surveyId, $language);
 
         $questionsMap = [];
@@ -186,7 +185,7 @@ class WebhookResponse extends PluginBase
         curl_close($ch);
 
         if ($errNo !== 0) {
-            throw new \Exception("CURL Error ($errNo): $errMsg");
+            echo "CURL Error ($errNo): $errMsg";
         }
 
         return $result;
