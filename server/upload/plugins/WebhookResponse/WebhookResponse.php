@@ -129,7 +129,7 @@ class WebhookResponse extends PluginBase
                     break;
             }
 
-            $questionsMap[$question->qid] = [
+            $questionsMap[] = [
                 'question' => $questionText,
                 'code' => $question->title,
                 'answer' => $answerValue
