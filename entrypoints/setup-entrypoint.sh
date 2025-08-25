@@ -93,6 +93,18 @@ if [ $? -ne 0 ]; then
     php application/commands/console.php install "$ADMIN_USER" "$ADMIN_PASSWORD" "$ADMIN_NAME" "$ADMIN_EMAIL"
 fi
 
+# Install default plugins
+if [ -d protiviti-defaults/plugins ]; then
+    for plugin in protiviti-defaults/plugins/*; do
+        if [ -d "$plugin" ]; then
+            echo "Info: Installing plugin $(basename "$plugin")"
+            echo "Running installuploadedplugin for $(basename "$plugin")"
+            php application/commands/console.php installuploadedplugin --pluginName="$(basename "$plugin")"
+        fi
+    done
+fi
+
+# Install uploaded plugins
 if [ -d upload/plugins ]; then
     for plugin in upload/plugins/*; do
         if [ -d "$plugin" ]; then

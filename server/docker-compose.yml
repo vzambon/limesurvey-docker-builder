@@ -2,7 +2,7 @@ services:
   limesurvey:
     image: limesurvey:6.14.3
     volumes:
-      - ./upload:/var/www/html/upload
+      - ./plugins:/var/www/html/upload/plugins
       - ./limesurvey-cron:/etc/cron.d/limesurvey-cron
       - ./logs:/var/log/app
       - lime:/var/www/html
