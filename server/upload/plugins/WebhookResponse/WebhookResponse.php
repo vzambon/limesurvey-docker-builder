@@ -142,6 +142,10 @@ class WebhookResponse extends PluginBase
         $response['participant_id'] = $token->participant_id;
         $response['surveyId'] = $surveyId;
 
+        foreach($questionsMap as $question) {
+            unset($response[$question['code']]);
+        }
+
         $webhookUrl = $this->get('webhookUrl', 'Survey', $surveyId) ??
             $this->getPluginSettings()['webhookUrl']['current'];
         $token = $this->get('authToken', 'Survey', $surveyId) ??
