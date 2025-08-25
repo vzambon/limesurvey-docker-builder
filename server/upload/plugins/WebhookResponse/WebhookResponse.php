@@ -13,20 +13,18 @@ class WebhookResponse extends PluginBase
             'global_only' => true,
             'type' => 'select',
             'options' => [
-                0 => 'No',
-                1 => 'Yes'
+                false => 'No',
+                true => 'Yes'
             ],
-            'default' => 0,
+            'default' => true,
             'label' => 'Send a hook for every survey by default ?',
         ],
         'webhookUrl' => [
             'type' => 'string',
-            'default' => '',
             'label' => 'The target webhook URL',
             'help' => 'The URL to which the webhook will send data after a survey response is submitted.'
         ],
         'authToken' => [
-            'nullable' => true,
             'type' => 'string',
             'label' => 'Webhook API Authorization Token',
             'help' => 'Webhook Authotization Token'
@@ -39,6 +37,12 @@ class WebhookResponse extends PluginBase
         $this->subscribe('newSurveySettings');
         $this->subscribe('beforeSurveySettings');
         $this->subscribe('afterSurveyComplete');
+        
+        $this->settings['useAlways']['default'] = getenv('ACTIVATE_WEBHOOK_PLUGIN') === 'true';
+        $this->settings['webhookUrl']['default'] = getenv('WEBHOOK_URL') ?: 'http://localhost/webhook';
+        $this->settings['authToken']['default'] = getenv('WEBHOOK_AUTH_TOKEN') ?: '<token>';
+
+        $this->setDefaults();
     }
 
     /**
@@ -48,28 +52,17 @@ class WebhookResponse extends PluginBase
     {
         $event = $this->getEvent();
         $surveyId = $event->get('survey');
-    
-        $settingsWithoutGlobal = array_filter($this->settings, function ($s) {
-            return empty($s['global_only']);
-        });
-
-        // exemplo de setting adicional fixo
-        $settings = array_merge([
-            'isActive' => [
-                'type' => 'boolean',
-                'default' => 0,
-                'label' => 'Is the plugin active?',
-                'help' => 'Enable or disable the webhook functionality.'
-            ]
-        ], $settingsWithoutGlobal);
-
         $globalSettings = $this->getPluginSettings();
+    
+        $settings = $this->getDefaultSurveySettings();
 
         foreach ($settings as $name => &$setting) {
             $value = $this->get($name, 'Survey', $surveyId);
 
             if (is_null($value) && (($setting['nullable'] ?? false) === false)) {
-                $value = $globalSettings[$name]['current'] ?? null;
+                $value = $globalSettings[$name]['current'] ??
+                    $globalSettings[$name]['default'] ??
+                    $setting['default'] ?? null;
             }
 
             $setting['current'] = $value;
@@ -87,30 +80,27 @@ class WebhookResponse extends PluginBase
     public function newSurveySettings()
     {
         $event = $this->event;
-        
-        $globalSettings = $this->getPluginSettings();
+        $survey = $event->get('survey');
+        $settings = $event->get('settings');
 
-        foreach ($event->get('settings') as $name => $value)
-        {
-            $value = $value ?? $globalSettings[$name]['current'] ?? $this->settings[$name]['default'] ?? null;
-            $this->set($name, $value, 'Survey', $event->get('survey'));
-        }
+        $this->setSettings($survey, $settings);
     }
 
     public function afterSurveyComplete()
     {
-        $isActive = (bool) $this->get('isActive', 'Survey', $this->getEvent()->get('surveyId'));
-
-        if(!$isActive) {
-            return;
-        }
-
         $event = $this->getEvent();
         $surveyId   = $event->get('surveyId');
         $responseId = $event->get('responseId');
         $response = $this->api->getResponse($surveyId, $responseId);
         $language = $response['startlanguage'] ?? 'en';
         $questions = $this->api->getQuestions($surveyId, $language);
+        $isActive = (bool) $this->get('isActive', 'Survey', $surveyId) ||
+            (bool) $this->getPluginSettings()['useAlways']['current'];
+        
+        if(!$isActive) {
+            var_dump('Plugin is inactive for this survey');
+            return;
+        }
 
         $questionsMap = [];
         foreach ($questions as $question) {
@@ -140,7 +130,7 @@ class WebhookResponse extends PluginBase
             }
 
             $questionsMap[$question->qid] = [
-                'text' => $questionText,
+                'question' => $questionText,
                 'code' => $question->title,
                 'answer' => $answerValue
             ];
@@ -152,12 +142,16 @@ class WebhookResponse extends PluginBase
         $response['participant_id'] = $token->participant_id;
         $response['surveyId'] = $surveyId;
 
-        $webhookUrl = $this->get('webhookUrl', 'Survey', $surveyId);
-        $token = $this->get('authToken', 'Survey', $surveyId);
+        $webhookUrl = $this->get('webhookUrl', 'Survey', $surveyId) ??
+            $this->getPluginSettings()['webhookUrl']['current'];
+        $token = $this->get('authToken', 'Survey', $surveyId) ??
+            $this->getPluginSettings()['authToken']['current'];
 
         $webhookUrl = $webhookUrl . '?token=' . $token;
 
         $response = array_merge($response, ['map' => $questionsMap]);
+
+        var_dump($response);
 
         $this->httpPost($webhookUrl, $response);
     }
@@ -189,5 +183,50 @@ class WebhookResponse extends PluginBase
         }
 
         return $result;
+    }
+
+    private function getDefaultSurveySettings()
+    {
+        $event = $this->getEvent();
+        $settingsWithoutGlobal = array_filter($this->settings, function ($s) {
+            return empty($s['global_only']);
+        });
+
+        return array_merge([
+            'isActive' => [
+                'type' => 'boolean',
+                'default' => !$event->get('useAlways', 'Global') ? false : true,
+                'label' => 'Is the plugin active?',
+                'help' => 'Enable or disable the webhook functionality.'
+            ]
+        ], $settingsWithoutGlobal);
+    }
+
+    private function setSettings($survey, $settings) {
+        $globalSettings = $this->getPluginSettings();
+
+        foreach ($settings as $name => $value)
+        {
+            $value = $value ?? $globalSettings[$name]['current'] ?? $this->settings[$name]['default'] ?? null;
+            $this->set($name, $value, 'Survey', $survey);
+        }
+    }
+
+    private function setDefaults()
+    {
+        $event = $this->event;
+
+        if(!$event) {
+            return;
+        }
+        
+        $survey = $event?->get('survey') ?? null;
+        if($survey === null) {
+            return;
+        }
+
+        $settings = $this->getDefaultSurveySettings();
+
+        $this->setSettings($survey, $settings);
     }
 }
