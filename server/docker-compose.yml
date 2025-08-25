@@ -6,6 +6,7 @@ services:
       - ./limesurvey-cron:/etc/cron.d/limesurvey-cron
       - ./logs:/var/log/app
       - lime:/var/www/html
+      - ../commands/InstallUploadedThemeCommand.php:/var/www/html/application/commands/InstallUploadedThemeCommand.php:ro
     networks:
       - lime_network
     extra_hosts:
