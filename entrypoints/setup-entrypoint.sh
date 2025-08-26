@@ -69,7 +69,8 @@ if [ ! -f application/config/config.php ]; then
          s|{{DEBUGSQL}}|$LS_DEBUGSQL|g; \
          s|{{PUBLIC_URL}}|$LS_PUBLIC_URL|g; \
          s|{{SESSION_NAME}}|$LS_SESSION_NAME|g; \
-         s|{{DEFAULT_LANGUAGE}}|$LS_DEFAULT_LANGUAGE|g;" \
+         s|{{DEFAULT_LANGUAGE}}|$LS_DEFAULT_LANGUAGE|g; \
+         s|{{SESSION_DOMAIN}}|$LS_SESSION_DOMAIN|g;" \
          application/config/config.php.template > application/config/config.php
 fi
 
