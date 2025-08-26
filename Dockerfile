@@ -93,11 +93,9 @@ RUN groupadd -g ${GROUP_ID} limesurvey \
     
 COPY ./LimeSurvey /var/www/html
 COPY ./templates/config.php.template /var/www/html/application/config/config.php.template
-COPY ./templates/security.php.template /var/www/html/application/config/security.php.template
 COPY ./commands/ /tmp/commands/
 RUN cp -rn /tmp/commands/* /var/www/html/application/commands/ \
 && rm -rf /tmp/commands
-COPY ./plugins/ /var/www/html/protiviti-defaults/plugins/
 
 RUN mkdir -p /var/log/app \
     && chown -R limesurvey:limesurvey /var/log/app \
