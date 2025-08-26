@@ -18,13 +18,13 @@ To build a new Docker image from a specific LimeSurvey version, you need to use 
     ./make_docker_image.sh --tag <your-chosen-tag>
     ```
 
-    For example, to build an image for version `6.5.4+240422`, you would run:
+    For example, to build an image for version `6.14.3+250617`, you would run:
 
     ```bash
-    ./make_docker_image.sh --tag 6.5.4+240422
+    ./make_docker_image.sh --tag 6.14.3+250617
     ```
 
 The script will:
 1.  Clone the LimeSurvey repository if it doesn't exist locally.
 2.  Checkout the specified tag.
-3.  Build the Docker image with the tag `fherat/limesurvey:<tag_without_plus_suffix>`.
+3.  Build the Docker image with the tag `limesurvey:<tag_without_plus_suffix>`.
