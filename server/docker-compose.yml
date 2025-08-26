@@ -6,7 +6,6 @@ services:
       - ./limesurvey-cron:/etc/cron.d/limesurvey-cron
       - ./logs:/var/log/app
       - lime:/var/www/html
-      - ../commands/InstallUploadedThemeCommand.php:/var/www/html/application/commands/InstallUploadedThemeCommand.php:ro
     networks:
       - lime_network
     extra_hosts:
@@ -32,21 +31,21 @@ services:
     container_name: pgsql-limesurvey
     image: postgres:14.10
     environment:
-        POSTGRES_DB: ${DB_NAME:-limesurvey}
-        POSTGRES_USER: ${DB_USER:-admin}
-        POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
+        POSTGRES_DB: ${LS_DB_NAME:-limesurvey}
+        POSTGRES_USER: ${LS_DB_USER:-admin}
+        POSTGRES_PASSWORD: ${LS_DB_PASSWORD:-password}
     volumes:
         - lime_database:/var/lib/postgresql/data
     networks:
         - lime_network
     ports:
-        - 6543:5432
+        - 6542:5432
     
 volumes:
   lime:
-    name: lime_data
+    name: lime_data_dev
   lime_database:
-    name: lime_database
+    name: lime_database_dev
 networks:
   lime_network:
-    name: lime_network
+    name: lime_network_dev
