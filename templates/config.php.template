@@ -37,6 +37,11 @@ return array(
 			'class' => 'application.core.web.DbHttpSession',
 			'connectionID' => 'db',
 			'sessionTableName' => '{{sessions}}',
+			'cookieParams' => array(
+				'path' => '{{BASE_URL}}',
+				'domain' => '{{SESSION_DOMAIN}}',
+				'httponly' => true,
+			),
 		 ),
 		
 		'urlManager' => array(
@@ -44,12 +49,12 @@ return array(
 			'rules' => array(
 				// You can add your own rules here
 			),
-			'showScriptName' => true,
+			'showScriptName' => false,
 		),
 	
-		//'request' => array(
-		//	'baseUrl' => '/limesurvey',
-		//),
+		'request' => array(
+			'baseUrl' => '{{BASE_URL}}',
+		),
 	),
 	// For security issue : it's better to set runtimePath out of web access
 	// 'runtimePath'=>'/var/limesurvey/runtime/'
