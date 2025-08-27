@@ -5,6 +5,7 @@ FROM php:8.3.23-fpm-alpine AS base
 
 ARG USER_ID
 ARG GROUP_ID
+ARG LIME_VERSION
 
 # Variáveis
 ENV SUPERCRONIC_URL=https://www.github.com/aptible/supercronic/releases/download/v0.2.34/supercronic-linux-amd64 \
@@ -31,7 +32,8 @@ RUN apk add --no-cache \
     linux-headers \
     zlib-dev \
     openldap-dev \
-    imap-dev
+    imap-dev \
+    git
 
 
 # Build das extensões PHP
@@ -90,8 +92,10 @@ COPY opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 # Usuário LimeSurvey
 RUN groupadd -g ${GROUP_ID} limesurvey \
     && useradd -u ${USER_ID} -g limesurvey -s /bin/sh -m limesurvey
+
+RUN curl -L https://github.com/LimeSurvey/LimeSurvey/archive/refs/tags/${LIME_VERSION}.tar.gz \
+    | tar -xz -C /var/www/html --strip-components=1
     
-COPY ./LimeSurvey /var/www/html
 COPY ./templates/config.php.template /var/www/html/application/config/config.php.template
 COPY ./commands/ /tmp/commands/
 RUN cp -rn /tmp/commands/* /var/www/html/application/commands/ \
